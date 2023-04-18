@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixPro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div style="display: flex;">
+            <span>FixPro&nbsp;</span>
+            <img src="./icon.png" alt="">
+        </div>
+    </nav>
+    <main>
+        <img src="./despaired-2261021_1920.jpg" alt="">
+        <header>
+            <h1>DON'T PANIC</h1>
+        </header>
+    </main>
+    <article>
+        <h2>We have solutions.</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ullam exercitationem non a magni rem,
+            tenetur labore possimus officiis delectus sapiente temporibus dignissimos unde, aspernatur iure sit et.
+            Possimus, est!</p>
+        <img src="./malicious-code-g2bf42fffb_1280.jpg" alt="">
+    </article>
+    <section>
+        <h1>We fixed <span id="num"></span> problems!</h1>
+    </section>
+    <article>
+        <h2>The key to your success</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae necessitatibus error autem, ipsam placeat
+            delectus tempora quasi velit consequatur consequuntur quos. Ex illo iure accusantium asperiores officiis
+            nostrum laborum dolorum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, id quae. Voluptatem alias repudiandae, atque
+            est sunt modi velit fuga sequi unde, nesciunt earum eius expedita deleniti consequuntur, vitae vero?</p>
+    </article>
+    <article style="color:white; outline: 4px solid goldenrod; outline-offset: 7px;">
+        <h2>Trusted company</h2>
+        <img id="medal" src="./medal-ga04ae8223_640.png" alt="">
+        <p>FixPro is a hardware service founded in 2020. We provide solutions for IT. Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Quam animi error in, quas itaque nesciunt, commodi similique dolores libero
+            eveniet hic nemo harum veritatis quis expedita excepturi, optio quod provident.</p>
+
+    </article>
+    <footer>
+        <div>
+            <a href="#">About</a>
+            <a href="#">Methods</a>
+            <a href="#">Office</a>
+            <a href="#">Opinions</a>
+        </div>
+        <div style="text-align: center;">
+            <p>FixPro</p>
+            <img src="./icon.png" alt="">
+            <p>&copy 2023</p>
+        </div>
+        <div>
+            <ul>
+                <li>965 Margaret Street</li>
+                <li>Houston</li>
+                <li>77026</li>
+                <li>Texas</li>
+                <li>(216)483-4544</li>
+            </ul>
+        </div>
+    </footer>
+    <button id="topback">^</button>
+    <script type="module">
+        import { CountUp } from './countUp.min.js';
+        let topBackButton = document.querySelector('#topback');
+        let numField = document.querySelector('#num');
+        numField.innerText = 0;
+
+        const options = {
+            duration: 5,
+            enableScrollSpy: true,
+            scrollSpyOnce: true
+        };
+        let counter = new CountUp(numField, 173, options);
+        if (!counter.error) {
+            counter.start();
+        } else {
+            console.error(counter.error);
+        }
+        counter.handleScroll();
+    
+        topBackButton.addEventListener('click', () => {
+            window.scroll({ top: 0, behavior: "smooth" })
+        })
+
+        document.addEventListener('scroll', handleScroll);
+
+        function handleScroll() {
+            console.log("work", document.documentElement.scrollTop)
+            if (document.documentElement.scrollTop > 50) {
+                topBackButton.style.cssText = `position: fixed;
+                                               bottom: 10px;
+                                               left: 10px;
+                                               width: 40px;
+                                               padding-top: 4px;
+                                               outline: none;
+                                               border: 2px solid goldenrod;
+                                               color: goldenrod;
+                                               background: none`
+            }
+            else {
+                topBackButton.style.display = 'none';
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

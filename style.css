@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #6d897d;
+  background: linear-gradient(180deg, rgb(109, 137, 125) 35%, rgb(83, 75, 98) 80%);
+  display: flex;
+  flex-direction: column;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  font-size: larger;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  animation: onhover ease 1000ms;
+  animation-fill-mode: forwards;
+}
+
+nav {
+  width: 100%;
+  padding: 10px;
+  background-color: #534B62;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+}
+nav a {
+  margin-right: 5px;
+  color: white;
+}
+nav img {
+  filter: invert(100%);
+}
+
+main {
+  max-width: 100%;
+  max-height: 100vh;
+  position: relative;
+}
+
+main img {
+  display: block;
+  max-height: 100vh;
+  max-width: 100%;
+  margin: auto;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  transform: translateX(-40%);
+  font-size: 4.5vw;
+}
+
+article,
+section {
+  width: 70%;
+  margin: 30px auto;
+  color: black;
+  text-align: justify;
+}
+article img,
+section img {
+  width: 50%;
+}
+
+section {
+  text-align: center;
+  color: darkgreen;
+  font-size: 1.4em;
+}
+
+#medal {
+  float: right;
+  width: 200px;
+}
+
+footer {
+  background-color: #534B62;
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+footer img {
+  width: 100%;
+  filter: invert(100%);
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+}
+footer div p {
+  margin: 0;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  animation: scaleBtn ease forwards 400ms;
+}
+
+@keyframes scaleBtn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes onhover {
+  from {
+    color: white;
+  }
+  to {
+    color: goldenrod;
+  }
+}
+@media (orientation: portrait) {
+  article {
+    width: 95%;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  footer div:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 700px) {
+  article img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  #medal {
+    float: none;
+    display: block;
+    margin: auto;
+  }
+  article h2 {
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
